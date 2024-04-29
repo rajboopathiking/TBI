@@ -3,3 +3,4 @@ flask-cors
 tensorflow
 keras
 python
+gunicorn

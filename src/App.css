@@ -1,0 +1,19 @@
+
+#scroll{
+    animation: reveal 1s ease linear;
+    animation-timeline: view();
+    animation-range-end: 20px;
+    animation-range-start: 10px;
+}
+
+/* Define the animation */
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation */

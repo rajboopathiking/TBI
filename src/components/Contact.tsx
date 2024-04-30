@@ -9,16 +9,16 @@ export default function Contact() {
                 <form action="mailto:{boopathiraj.researchbrains@gmail.com}">
                     <div>
                         <label htmlFor="Username">
-                            <input className='border border-black rounded h-10 m-2 p-2 sm:w-[90%]' type="text" id='Username' placeholder='Username'/>
+                            <input className='border border-black text-black rounded h-10 m-2 p-2 sm:w-[90%]' type="text" id='Username' placeholder='Username'/>
                         </label>
                         <label htmlFor="email">
-                            <input className='border border-black rounded h-10 m-2 p-2 sm:w-[90%]' type="text" id='email' placeholder='email'/>
+                            <input className='border border-black text-black rounded h-10 m-2 p-2 sm:w-[90%]' type="text" id='email' placeholder='email'/>
                         </label>
                     </div>
 
                     <div>
                         <label htmlFor="Query" >
-                            <input className='border h-30 w-[500px] border-black rounded h-10 m-2 p-2 sm:w-[90%]' type="text" id='Query' placeholder='Please Write Your Queries'/>
+                            <input className='border h-30 w-[500px] border-black text-black rounded h-10 m-2 p-2 sm:w-[90%]' type="text" id='Query' placeholder='Please Write Your Queries'/>
                         </label>
                     </div>
                     <div className='m-5'>

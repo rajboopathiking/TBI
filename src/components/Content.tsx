@@ -64,7 +64,7 @@ export default function Content() {
                                 placeholder={key}
                                 value={value}
                                 onChange={handleChange}
-                                className='font-bold border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500'
+                                className='font-bold border text-black border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500'
                             />
                         </label>
                     ))}

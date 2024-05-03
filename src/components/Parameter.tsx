@@ -4,7 +4,7 @@ import "../App.css"
 
 export default function Parameter() {
     return (
-        <div>
+        <div className="sm:hidden md:hidden">
             <h1 className='text-xl font-bold text-center'>Evaluation</h1>
             <div className='flex justify-center items-center gap-20 m-5'>
                 <div>

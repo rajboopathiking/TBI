@@ -1,0 +1,58 @@
+.nav-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+   
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo{
+    font-size: large;
+    font-weight: bold;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -15px;
+}
+.nav-main div{
+    padding: 0px 10px 0px 10px;
+}
+
+@media screen and (max-width:500px){
+    .list-items li{
+        display: none;
+    }
+    
+}
+.list-items{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    
+   
+}
+.list-items a{
+    text-decoration: none;
+    color: black;
+}
+
+.list-items a:hover{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+}
+.intro-2{
+    width: 80%;
+}

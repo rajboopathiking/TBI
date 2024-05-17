@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.a-1{
+    width: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 20px;
+    display: flex;
+
+}
+.a-2{
+    width: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 20px;
+    display: flex;
+
+}
+
+.a-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.a-main img{
+    border-radius: 20px;
+}

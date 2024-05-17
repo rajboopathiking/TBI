@@ -1,0 +1,55 @@
+.details{
+    position: relative;
+    margin-top: 50px;
+}
+.h-t-1{
+    width: 90%;
+    text-align: center;
+}
+.details  div{
+    display: flex;
+    padding: 20px;
+}
+.details h1{
+    text-align: center;
+}
+@media screen and (max-width:500px){
+    .arrow{
+        display: none;
+    } 
+}
+
+.d-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+.d-1 p{
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+
+.details p{
+    padding-left: 20px;
+}
+.d-2{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.details-main{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.svg-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

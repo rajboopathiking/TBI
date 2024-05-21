@@ -7,7 +7,6 @@ export default function Footer() {
         <li>insightmedix</li>
         <li>@ copyright 2024</li>
         <li>@ Artificial Intelligence</li>
-        <button className='f-1'><a href="/Contact">contact us</a></button>
       </ul>
 
     </div>

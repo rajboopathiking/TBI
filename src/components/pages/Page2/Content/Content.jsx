@@ -1,28 +1,20 @@
-import { useState } from 'react';
-import React from 'react';
-import axios from 'axios'; // Import axios for making HTTP requests
+import React, { useState } from 'react';
+import axios from 'axios';
 import "../Content/Content.css";
 
 export default function Content() {
     const [isclick, setIsclick] = useState(false);
     const [result, setResult] = useState('');
-    const [loading, setLoading] = useState(false); // State to track loading status
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         Age: '',
         Sex: '',
-        Problem_nature: '',
-        TBI: '',
-        DC: '',
-        Craniectomy: '',
-        Haematom_after_DC: '',
-        Type_of_hematoma: '',
-        Other_surgeries_post_operatively: '',
-        Days_after_1st_surgery: '',
+        Automated_BP_SBP: '',
+        Automated_BP_DBP: '',
+        Automated_BP_MAP: '',
         Oxygenation: '',
-        Place_of_ICP_monitoring: '',
-        ICP_Range: '',
-        Hospitalization: '',
-        ICU_stay: ''
+        Place_of_ICP_Monitoring: '',
+        ICP_Range: ''
     });
 
     const handleChange = (e) => {
@@ -32,22 +24,28 @@ export default function Content() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true); // Set loading to true when the form is submitted
+        setLoading(true);
         try {
             // Convert form data to list of floats
-            const dataList = Object.values(formData).map(parseFloat);
+            const dataList = [
+                parseFloat(formData.Age),
+                parseFloat(formData.Sex),
+                parseFloat(formData.Automated_BP_SBP),
+                parseFloat(formData.Automated_BP_DBP),
+                parseFloat(formData.Automated_BP_MAP),
+                parseFloat(formData.Oxygenation),
+                parseFloat(formData.Place_of_ICP_Monitoring),
+                parseFloat(formData.ICP_Range)
+            ];
 
             // Make POST request to API
             const response = await axios.post('https://tbi-backend.onrender.com/api', { data: dataList });
-            
-            // Update state and display prediction
             setIsclick(true);
-            console.log(response.data);
             setResult(response.data["Prediction"]);
         } catch (error) {
             console.error('Error:', error);
         } finally {
-            setLoading(false); // Set loading to false when the request is complete
+            setLoading(false);
         }
     };
 
@@ -57,29 +55,116 @@ export default function Content() {
 
             <div>
                 <form className='forms' id='form' onSubmit={handleSubmit}>
-                    {/* Render input fields */}
-                    {Object.entries(formData).map(([key, value]) => (
-                        <label key={key} htmlFor={key}>
-                            <input
-                                type='text'
-                                id={key}
-                                placeholder={key}
-                                value={value}
-                                onChange={handleChange}
-                                className='inputs'
-                            />
-                        </label>
-                    ))}
+                    <label htmlFor="Age">
+                        Age:
+                        <input
+                            type='text'
+                            id='Age'
+                            placeholder='Age'
+                            value={formData.Age}
+                            onChange={handleChange}
+                            className='inputs'
+                        />
+                    </label>
+
+                    <label htmlFor="Sex">
+                        Sex:
+                        <select
+                            id='Sex'
+                            value={formData.Sex}
+                            onChange={handleChange}
+                            className='inputs'
+                        >
+                            <option value="1">Female</option>
+                            <option value="2">Male</option>
+                        </select>
+                    </label>
+
+                    <label htmlFor="Automated_BP_SBP">
+                        Automated BP SBP:
+                        <input
+                            type='text'
+                            id='Automated_BP_SBP'
+                            placeholder='Automated BP SBP'
+                            value={formData.Automated_BP_SBP}
+                            onChange={handleChange}
+                            className='inputs'
+                        />
+                    </label>
+
+                    <label htmlFor="Automated_BP_DBP">
+                        Automated BP DBP:
+                        <input
+                            type='text'
+                            id='Automated_BP_DBP'
+                            placeholder='Automated BP DBP'
+                            value={formData.Automated_BP_DBP}
+                            onChange={handleChange}
+                            className='inputs'
+                        />
+                    </label>
+                    
+                    <label htmlFor="Automated_BP_MAP">
+                        Automated BP MAP:
+                        <input
+                            type='text'
+                            id='Automated_BP_MAP'
+                            placeholder='Automated BP MAP'
+                            value={formData.Automated_BP_MAP}
+                            onChange={handleChange}
+                            className='inputs'
+                        />
+                    </label>
+
+                    <label htmlFor="Oxygenation">
+                        Oxygenation(spO2):
+                        <select
+                            id='Oxygenation'
+                            value={formData.Oxygenation}
+                            onChange={handleChange}
+                            className='inputs'
+                        >
+                            <option value="0">Normal (SpO2 ≥ 95%)</option>
+                            <option value="1">AbNormal (SpO2 ≥ 95%)</option>
+                        </select>
+                    </label>
+
+                    <label htmlFor="Place_of_ICP_Monitoring">
+                        Place of ICP Monitoring:
+                        <select
+                            id='Place_of_ICP_Monitoring'
+                            value={formData.Place_of_ICP_Monitoring}
+                            onChange={handleChange}
+                            className='inputs'
+                        >
+                            <option value="0">Not Monitored</option>
+                            <option value="1">Subdural</option>
+                            <option value="2">Ventricle</option>
+                            <option value="3">Cerebellum</option>
+                        </select>
+                    </label>
+
+                    <label htmlFor="ICP_Range">
+                        ICP Range:
+                        <select
+                            id='ICP_Range'
+                            value={formData.ICP_Range}
+                            onChange={handleChange}
+                            className='inputs'
+                        >
+                            <option value="0">Normal (ICP ≤ 20 mmHg)</option>
+                            <option value="1">AbNormal (ICP ≤ 20 mmHg)</option>
+                        </select>
+                    </label>
+
                     <button className="b-p" type="submit">Predict</button>
                 </form>
             </div>
-            
-            {/* Display loading spinner */}
+
             {loading && (
                 <div className="spinner"></div>
             )}
 
-            {/* Display prediction */}
             {isclick && !loading && (
                 <div className='result-main'>
                     <div className='result-main-1'>

@@ -12,11 +12,11 @@ export default function Contacttem() {
                             <input className="l-1" type="text" id='Username' placeholder='Username'/>
                         </label>
                         <label htmlFor="email" >
-                            <input className="l-2" type="text" id='email' placeholder='email'/>
+                            <input className="l-2" type="text" id='email' placeholder='Gmail'/>
                         </label>
                     </div>
 
-                    <div>
+                    <div className="b-a">
                         <label htmlFor="Query" >
                             <button className="b-c" type="submit">Contact</button>
                         </label >

@@ -29,13 +29,13 @@ export default function Content() {
             // Convert form data to list of floats
             const dataList = [
                 parseFloat(formData.Age),
-                parseFloat(formData.Sex),
+                parseInt(formData.Sex),
                 parseFloat(formData.Automated_BP_SBP),
                 parseFloat(formData.Automated_BP_DBP),
                 parseFloat(formData.Automated_BP_MAP),
-                parseFloat(formData.Oxygenation),
-                parseFloat(formData.Place_of_ICP_Monitoring),
-                parseFloat(formData.ICP_Range)
+                parseInt(formData.Oxygenation),
+                parseInt(formData.Place_of_ICP_Monitoring),
+                parseInt(formData.ICP_Range)
             ];
 
             // Make POST request to API

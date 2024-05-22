@@ -28,11 +28,11 @@ export default function Content() {
         try {
             // Convert form data to list of floats
             const dataList = [
-                parseFloat(formData.Age),
+                parseInt(formData.Age),
                 parseInt(formData.Sex),
-                parseFloat(formData.Automated_BP_SBP),
-                parseFloat(formData.Automated_BP_DBP),
-                parseFloat(formData.Automated_BP_MAP),
+                parseInt(formData.Automated_BP_SBP),
+                parseInt(formData.Automated_BP_DBP),
+                parseInt(formData.Automated_BP_MAP),
                 parseInt(formData.Oxygenation),
                 parseInt(formData.Place_of_ICP_Monitoring),
                 parseInt(formData.ICP_Range)

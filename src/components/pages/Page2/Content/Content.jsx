@@ -118,7 +118,7 @@ export default function Content() {
                     </label>
 
                     <label htmlFor="Oxygenation">
-                        Oxygenation(spO2):
+                        Oxygenation:
                         <select
                             id='Oxygenation'
                             value={formData.Oxygenation}

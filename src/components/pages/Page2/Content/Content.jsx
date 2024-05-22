@@ -42,7 +42,6 @@ export default function Content() {
             const response = await axios.post('https://tbi-backend.onrender.com/api', { data: dataList });
             setIsclick(true);
             setResult(response.data["Prediction"]);
-            console.log(dataList,response)
         } catch (error) {
             console.error('Error:', error);
         } finally {

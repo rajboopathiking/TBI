@@ -28,20 +28,21 @@ export default function Content() {
         try {
             // Convert form data to list of floats
             const dataList = [
-                parseInt(formData.Age),
-                parseInt(formData.Sex),
-                parseInt(formData.Automated_BP_SBP),
-                parseInt(formData.Automated_BP_DBP),
-                parseInt(formData.Automated_BP_MAP),
-                parseInt(formData.Oxygenation),
-                parseInt(formData.Place_of_ICP_Monitoring),
-                parseInt(formData.ICP_Range)
+                parseFloat(formData.Age),
+                parseFloat(formData.Sex),
+                parseFloat(formData.Automated_BP_SBP),
+                parseFloat(formData.Automated_BP_DBP),
+                parseFloat(formData.Automated_BP_MAP),
+                parseFloat(formData.Oxygenation),
+                parseFloat(formData.Place_of_ICP_Monitoring),
+                parseFloat(formData.ICP_Range)
             ];
 
             // Make POST request to API
             const response = await axios.post('https://tbi-backend.onrender.com/api', { data: dataList });
             setIsclick(true);
             setResult(response.data["Prediction"]);
+            console.log(dataList,response)
         } catch (error) {
             console.error('Error:', error);
         } finally {
@@ -124,8 +125,8 @@ export default function Content() {
                             onChange={handleChange}
                             className='inputs'
                         >
-                            <option value="0">Normal(SpO2 ≥ 95%)</option>
-                            <option value="1">AbNormal(SpO2 ≥ 95%)</option>
+                            <option value="0">Normal (SpO2 ≥ 95%)</option>
+                            <option value="1">AbNormal (SpO2 ≥ 95%)</option>
                         </select>
                     </label>
 
@@ -137,7 +138,7 @@ export default function Content() {
                             onChange={handleChange}
                             className='inputs'
                         >
-                            <option value="0">Not-Monitored</option>
+                            <option value="0">Not Monitored</option>
                             <option value="1">Subdural</option>
                             <option value="2">Ventricle</option>
                             <option value="3">Cerebellum</option>

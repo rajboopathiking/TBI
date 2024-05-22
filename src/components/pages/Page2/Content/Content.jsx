@@ -124,8 +124,8 @@ export default function Content() {
                             onChange={handleChange}
                             className='inputs'
                         >
-                            <option value="0">Normal (SpO2 ≥ 95%)</option>
-                            <option value="1">AbNormal (SpO2 ≥ 95%)</option>
+                            <option value="0">Normal(SpO2 ≥ 95%)</option>
+                            <option value="1">AbNormal(SpO2 ≥ 95%)</option>
                         </select>
                     </label>
 
@@ -137,7 +137,7 @@ export default function Content() {
                             onChange={handleChange}
                             className='inputs'
                         >
-                            <option value="0">Not Monitored</option>
+                            <option value="0">Not-Monitored</option>
                             <option value="1">Subdural</option>
                             <option value="2">Ventricle</option>
                             <option value="3">Cerebellum</option>
@@ -152,8 +152,8 @@ export default function Content() {
                             onChange={handleChange}
                             className='inputs'
                         >
-                            <option value="0">Normal (ICP ≤ 20 mmHg)</option>
-                            <option value="1">AbNormal (ICP ≤ 20 mmHg)</option>
+                            <option value="0">Normal(ICP ≤ 20 mmHg)</option>
+                            <option value="1">AbNormal(ICP ≤ 20 mmHg)</option>
                         </select>
                     </label>
 

@@ -68,19 +68,7 @@ export default function Content() {
                         />
                     </label>
 
-                    <label htmlFor="Sex">
-                        Sex:
-                        <select
-                            id='Sex'
-                            value={formData.Sex}
-                            onChange={handleChange}
-                            className='inputs'
-                        >
-                            <option value=""></option>
-                            <option value="1">Female</option>
-                            <option value="2">Male</option>
-                        </select>
-                    </label>
+                    
 
                     <label htmlFor="Automated_BP_SBP">
                         Automated BP SBP:
@@ -116,6 +104,25 @@ export default function Content() {
                             onChange={handleChange}
                             className='inputs'
                         />
+                    </label>
+
+
+
+
+
+
+                    <label htmlFor="Sex">
+                        Sex:
+                        <select
+                            id='Sex'
+                            value={formData.Sex}
+                            onChange={handleChange}
+                            className='inputs'
+                        >
+                            <option value=""></option>
+                            <option value="1">Female</option>
+                            <option value="2">Male</option>
+                        </select>
                     </label>
 
                     <label htmlFor="Oxygenation">

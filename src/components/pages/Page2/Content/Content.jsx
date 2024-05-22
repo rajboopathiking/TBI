@@ -76,6 +76,7 @@ export default function Content() {
                             onChange={handleChange}
                             className='inputs'
                         >
+                            <option value=""></option>
                             <option value="1">Female</option>
                             <option value="2">Male</option>
                         </select>
